@@ -13,53 +13,74 @@ use Crypt as Encrypt;
 |
 */
 
-get('/',function(){
-	return redirect()->route('company');
-});
+$server = explode('.', Request::server('HTTP_HOST'));
+
+Route::group(['domain'=> $server[0].'.bsstpt.com'],function(){
+	$server = explode('.', Request::server('HTTP_HOST'));
+	if($server[0] == "www")
+	{
+
+		Route::get('/',function(){
+			return redirect()->route('company');
+		});
+
+		Route::get('company',['as'=>'company','uses'=>'CompanyController@index']);
+		Route::post('company','CompanyController@save');
+		Route::get('thanks','CompanyController@thanks');
+
+		Route::post('validation/email','ValidationController@email');
+		Route::post('validation/alias','ValidationController@alias');
+
+	}else{
+
+		$server = explode('.', Request::server('HTTP_HOST'));
+		$alias = \App\Company::where('alias',$server[0])->first()->alias;
 
 
-Route::get('company',['as'=>'company','uses'=>'CompanyController@index']);
-Route::post('company','CompanyController@save');
-Route::get('thanks','CompanyController@thanks');
+		Route::group(['domain'=> $alias.'.bsstpt.com'],function(){
 
-Route::post('validation/email','ValidationController@email');
-Route::post('validation/alias','ValidationController@alias');
+			Route::get('/',function(){
 
-Route::group(['middleware'=>'auth'],function(){
-
-	Route::get('dashboard',['as'=>'dashboard','uses'=>function(){
-		return view('dashboard');
-	}]);
-
-	Route::resource('user','UserController');
-	Route::resource('branch','BranchController');
-	Route::resource('party','PartyController');
-	Route::resource('driver','DriverController');
-	Route::resource('truck','TruckController');
-	Route::resource('issuegr','IssueGrController');
-	Route::resource('issuechallan','IssueChallanController');
-	Route::resource('issuebill','IssueBillController');
-	Route::resource('issuevoucher','IssueVoucherController');
-	Route::resource('issueloadingslip','IssueLoadingSlipController');
-	Route::resource('station','StationController');
-	Route::resource('district','DistrictController');
-	Route::resource('state','StateController');
-	Route::resource('generalhead','GeneralHeadController');
-	Route::resource('brand','BrandController');
-	Route::resource('product','ProductController');
-	Route::resource('productdetail','ProductDetailController');
-	Route::resource('grstatus','GRStatusController');
-	Route::resource('freightprice','FreightPriceController');
-	Route::resource('productregistration','ProductRegistrationController');
-	Route::resource('godown','GodownController');
-	Route::resource('account','AccountController');
-	Route::resource('invoice','InvoiceController');
-
-});
+				return redirect()->route('dashboard');
+			});
 
 
-Route::group(['prefix'=>'api/v1'],function(){
-	Route::post('state','Api\TransportController@state');
+			Route::group(['middleware'=>'auth'],function(){
+
+				Route::get('dashboard',['as'=>'dashboard','uses'=>function(){
+					return view('dashboard');
+				}]);
+
+					Route::resource('user','UserController');
+					Route::resource('branch','BranchController');
+					Route::resource('party','PartyController');
+					Route::resource('driver','DriverController');
+					Route::resource('truck','TruckController');
+					Route::resource('issuegr','IssueGrController');
+					Route::resource('issuechallan','IssueChallanController');
+					Route::resource('issuebill','IssueBillController');
+					Route::resource('issuevoucher','IssueVoucherController');
+					Route::resource('issueloadingslip','IssueLoadingSlipController');
+					Route::resource('station','StationController');
+					Route::resource('district','DistrictController');
+					Route::resource('state','StateController');
+					Route::resource('generalhead','GeneralHeadController');
+					Route::resource('brand','BrandController');
+					Route::resource('product','ProductController');
+					Route::resource('productdetail','ProductDetailController');
+					Route::resource('grstatus','GRStatusController');
+					Route::resource('freightprice','FreightPriceController');
+					Route::resource('productregistration','ProductRegistrationController');
+					Route::resource('godown','GodownController');
+					Route::resource('account','AccountController');
+					Route::resource('invoice','InvoiceController');
+
+			});
+
+		});
+
+	}
+
 });
 
 Route::controllers([

@@ -100,7 +100,7 @@ $(function() {
       $('#r-company-name').html($('#client_company_name').val());
       $('#r-email').html($('#client_email').val());
       $('#r-password').html($('#client_password').val());
-      $('#r-address').html("http://" + ($('#website_sub_name').val()) + ".bsstpt.in");
+      $('#r-address').html("http://" + ($('#website_sub_name').val()) + ".transpt.co.in");
       // locales = [];
       // $('[name="website[locales][]"]:checked').each(function() {
       //   return locales.push(build_span_label($(this).attr('data-name')));

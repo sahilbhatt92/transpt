@@ -9,4 +9,4 @@ http://www.transpt.co.in/
 
 ### Note
 
-This app is just implementation of how complex software can be made by the few frameworks around the web. This showcase of software is not a purpose for selling. its free to download
+This app is just implementation of how complex software can be made by the few frameworks around the web. Its free to clone and download

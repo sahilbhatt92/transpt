@@ -33,7 +33,7 @@ class CreateBranchesTable extends Migration {
 			$table->integer('district_id');
 			$table->integer('company_id');
 			$table->integer('account_year_id');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

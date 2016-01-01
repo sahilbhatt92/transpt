@@ -22,7 +22,7 @@ class CreateIssueGRsTable extends Migration {
 			$table->integer('user_id');
 			$table->integer('company_id');
 			$table->integer('account_year_id');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

@@ -18,7 +18,7 @@ class CreateGrFieldsTable extends Migration {
 			$table->string('field_name');
 			$table->string('field_title');
 			$table->integer('company_id');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('company_id');
 			$table->integer('account_year_id');
 			$table->boolean('active');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

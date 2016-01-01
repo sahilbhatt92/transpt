@@ -22,7 +22,7 @@ class CreateIssueLoadingSlipTable extends Migration {
 			$table->integer('branch_id');
 			$table->integer('company_id');
 			$table->integer('account_year_id');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

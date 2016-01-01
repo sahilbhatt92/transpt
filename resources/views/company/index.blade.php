@@ -69,7 +69,7 @@
 														<div class="input-group input-group-fix">
 															<span class="input-group-addon">http://</span>
 															<input type="text" size="30" placeholder="Your Subdomain Name" name="website[sub_name]" id="website_sub_name" data-popover-offset="0,120" class="span2 form-control">
-															<span class="input-group-addon">.bsstpt.com</span>
+															<span class="input-group-addon">.transpt.co.in</span>
 														</div>
 													</div>
 												</div>

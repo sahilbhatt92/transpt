@@ -52,14 +52,14 @@
 					<tr>
 						<td class="info-td">Website Address</td>
 						<td><span id="r-address" class="label label-success">
-							http://{{session('input')['website']['sub_name']}}.bsstpt.com/auth/login
+							http://{{session('input')['website']['sub_name']}}.transpt.co.in/auth/login
 						</span></td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div class="clearfix"></div>
-		<a href="http://{{session('input')['website']['sub_name']}}.bsstpt.com/" class="btn btn-primary submit-btn">Now Login</a>
+		<a href="http://{{session('input')['website']['sub_name']}}.transpt.co.in/" class="btn btn-primary submit-btn">Now Login</a>
 	</div>
 	</div>
 @else

@@ -15,7 +15,7 @@ use Crypt as Encrypt;
 
  $server = explode('.', Request::server('HTTP_HOST'));
 
-Route::group(['domain'=> $server[0].'.bsstpt.com'],function(){
+Route::group(['domain'=> $server[0].'.transpt.co.in'],function(){
 	$server = explode('.', Request::server('HTTP_HOST'));
 	if($server[0] == "www")
 	{
@@ -37,7 +37,7 @@ Route::group(['domain'=> $server[0].'.bsstpt.com'],function(){
 		$alias = \App\Company::where('alias',$server[0])->first()->alias;
 
 
-		Route::group(['domain'=> $alias.'.bsstpt.com'],function(){
+		Route::group(['domain'=> $alias.'.transpt.co.in'],function(){
 
 			Route::get('/',function(){
 

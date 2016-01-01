@@ -17,7 +17,7 @@ class CreateAccountYearTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->integer('company_id');
-			$table->nullableTimestamps();
+			$table->timestamps();
 		});
 	}
 

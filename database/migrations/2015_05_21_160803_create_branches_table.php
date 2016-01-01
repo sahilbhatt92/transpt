@@ -27,13 +27,13 @@ class CreateBranchesTable extends Migration {
 			$table->string('pin')->nullable();
 			$table->string('email')->nullable();
 			$table->string('agency')->nullable();
-			$table->string('pan')->nullable();
-			$table->string('tin')->nullable();
+			$table->string('pan');
+			$table->string('tin');
 			$table->integer('state_id');
 			$table->integer('district_id');
 			$table->integer('company_id');
 			$table->integer('account_year_id');
-			$table->nullableTimestamps();
+			$table->timestamps();
 		});
 	}
 

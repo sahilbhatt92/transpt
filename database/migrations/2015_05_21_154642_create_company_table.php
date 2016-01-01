@@ -17,7 +17,7 @@ class CreateCompanyTable extends Migration {
 			$table->increments('id');
 			$table->string('alias');
 			$table->string('name');
-			$table->nullableTimestamps();
+			$table->timestamps();
 		});
 	}
 

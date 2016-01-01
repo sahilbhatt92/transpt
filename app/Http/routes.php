@@ -13,7 +13,7 @@ use Crypt as Encrypt;
 |
 */
 
-/* $server = explode('.', Request::server('HTTP_HOST'));
+ $server = explode('.', Request::server('HTTP_HOST'));
 
 Route::group(['domain'=> $server[0].'.bsstpt.com'],function(){
 	$server = explode('.', Request::server('HTTP_HOST'));
@@ -81,7 +81,7 @@ Route::group(['domain'=> $server[0].'.bsstpt.com'],function(){
 
 	}
 
-}); */
+}); 
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

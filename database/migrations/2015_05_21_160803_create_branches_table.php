@@ -27,8 +27,8 @@ class CreateBranchesTable extends Migration {
 			$table->string('pin')->nullable();
 			$table->string('email')->nullable();
 			$table->string('agency')->nullable();
-			$table->string('pan');
-			$table->string('tin');
+			$table->string('pan')->nullable();
+			$table->string('tin')->nullable();
 			$table->integer('state_id');
 			$table->integer('district_id');
 			$table->integer('company_id');

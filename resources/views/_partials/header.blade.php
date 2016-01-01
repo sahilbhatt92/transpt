@@ -7,7 +7,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('/')}}"><span class="sp1">BSS</span><span class="sp2">TPT</span></a>
+                <a class="navbar-brand" href="{{url('/')}}"><span class="sp1">TRANS</span><span class="sp2">PT</span></a>
             </div>
             <!-- /.navbar-header -->
 @if(Auth::check())
